@@ -23,3 +23,5 @@ curl -fsSL [https://raw.githubusercontent.com/xyzzing/waveterm-clarity/main/inst
 | **Decompressed Metrics** | 17px, 1.45x line-height, +1.2px tracking | Resolves visual crowding and character-collision blur. |
 | **Medium Weight (500)** | Stroke-to-height ratio >= 1:6 | Prevents glyph stems from vanishing under astigmatic blur. |
 | **Command Separators** | Horizontal rule between executions | Replaces continuous walls of text with discrete visual sessions. |
+
+*Zero-Touch Backend Discovery: Automatically detects Ollama (:11434), vLLM/SGLang (:8000), llama-server (:8080), or LM Studio (:1234), or $OPENAI_BASE_URL. Queries the active loaded model automatically.*
