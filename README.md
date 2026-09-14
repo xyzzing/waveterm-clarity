@@ -1,5 +1,11 @@
 # WaveTerm Clarity & Ocular Ergonomics Suite
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-b59654?style=flat-square&labelColor=1d1b18)](LICENSE)
+[![Shell](https://img.shields.io/badge/Shell-Zsh%20%7C%20Bash-baa98f?style=flat-square&labelColor=1d1b18)](#)
+[![Font](https://img.shields.io/badge/Font-JetBrains%20Mono%20Medium-baa98f?style=flat-square&labelColor=1d1b18)](#)
+[![Optics](https://img.shields.io/badge/Optics-585nm%20Low%20Scatter-b59654?style=flat-square&labelColor=1d1b18)](#)
+
+
 An evidence-based terminal environment engineered for **developers over 40** and those with **astigmatism**.
 
 ### Quick Install
