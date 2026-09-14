@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+CMD="$*"
+[[ -z "$CMD" ]] && { echo "Usage: hermes-gate <command>"; exit 1; }
+
+echo -e "\n\033[38;2;171;98;89m⚠ AGENT EXECUTION APPROVAL REQUIRED:\033[0m"
+echo -e "\033[38;2;181;150;84m$CMD\033[0m"
+echo -n "Execute? [y/N/e(dit)]: "
+read -r choice < /dev/tty
+
+case "$choice" in
+    y|Y) eval "$CMD" ;;
+    e|E)
+        read -e -p "Edit: " -i "$CMD" edited_cmd < /dev/tty
+        eval "$edited_cmd"
+        ;;
+    *) echo "Execution rejected."; exit 130 ;;
+esac

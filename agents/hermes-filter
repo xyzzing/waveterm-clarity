@@ -1,0 +1,49 @@
+#!/usr/bin/env python3
+import sys, re, json
+
+C_RESET = "\033[0m"
+C_SLATE = "\033[38;2;90;82;69m"
+C_AMBER = "\033[38;2;181;150;84m"
+C_SAGE  = "\033[38;2;123;143;93m"
+C_FG    = "\033[38;2;186;169;143m"
+
+def fmt_scratch(m):
+    return f"\n{C_SLATE}┌── 💭 Thinking {m.group(1).strip()}\n└──{C_RESET}\n"
+
+def fmt_call(m):
+    raw = m.group(1).strip()
+    try:
+        data = json.loads(raw)
+        name = data.get("name", "tool")
+        args = json.dumps(data.get("arguments", {}), indent=2)
+    except Exception:
+        name = "action"
+        args = raw
+    return f"\n{C_AMBER}┌── ⚡ Action: {name}{C_RESET}\n{C_FG}{args}{C_RESET}\n{C_AMBER}└──{C_RESET}\n"
+
+def fmt_resp(m):
+    return f"\n{C_SAGE}┌── ✔ Observation {m.group(1).strip()}\n└──{C_RESET}\n"
+
+def main():
+    buf = ""
+    while True:
+        c = sys.stdin.read(1)
+        if not c: break
+        buf += c
+        if "</scratchpad>" in buf:
+            buf = re.sub(r"<scratchpad>([\s\S]*?)</scratchpad>", fmt_scratch, buf)
+            sys.stdout.write(buf); sys.stdout.flush(); buf = ""
+        elif "</tool_call>" in buf:
+            buf = re.sub(r"<tool_call>([\s\S]*?)</tool_call>", fmt_call, buf)
+            sys.stdout.write(buf); sys.stdout.flush(); buf = ""
+        elif "</tool_response>" in buf:
+            buf = re.sub(r"<tool_response>([\s\S]*?)</tool_response>", fmt_resp, buf)
+            sys.stdout.write(buf); sys.stdout.flush(); buf = ""
+        elif "\n" in buf and not any(t in buf for t in ["<scratchpad>", "<tool_call>", "<tool_response>"]):
+            sys.stdout.write(buf); sys.stdout.flush(); buf = ""
+    if buf:
+        sys.stdout.write(buf); sys.stdout.flush()
+
+if __name__ == "__main__":
+    try: main()
+    except KeyboardInterrupt: pass

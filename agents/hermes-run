@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+LOG_DIR="$HOME/.cache/hermes-trajectories"
+mkdir -p "$LOG_DIR"
+SESSION_LOG="$LOG_DIR/session-$(date +%Y%m%d-%H%M%S).log"
+
+echo "🤖 Launching Agent with Clarity Filter..."
+echo "📁 Trajectory log: $SESSION_LOG"
+
+if [ $# -eq 0 ]; then
+    tee -a "$SESSION_LOG" | hermes-filter
+else
+    "$@" 2>&1 | tee -a "$SESSION_LOG" | hermes-filter
+fi
