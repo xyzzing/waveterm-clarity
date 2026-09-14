@@ -1,0 +1,8 @@
+{
+  "bg@amber-ochre": {
+    "display:name": "Amber Ochre Canvas",
+    "display:order": 1,
+    "bg:color": "#181614",
+    "border:color": "#332e27"
+  }
+}

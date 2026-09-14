@@ -1,0 +1,28 @@
+{
+  "evidence-amber": {
+    "display:name": "Amber Ochre (Low Scatter / 585nm)",
+    "display:order": 2,
+    "background": "#1d1b18",
+    "foreground": "#baa98f",
+    "cmdtext": "#baa98f",
+    "cursor": "#947a5a",
+    "selectionBackground": "#332e27",
+    "gray": "#6b6152",
+    "black": "#171513",
+    "red": "#ab6259",
+    "green": "#7b8f5d",
+    "yellow": "#b59654",
+    "blue": "#63788a",
+    "magenta": "#8f6b7c",
+    "cyan": "#5e827b",
+    "white": "#9c8e77",
+    "brightBlack": "#453f36",
+    "brightRed": "#b86b62",
+    "brightGreen": "#879c67",
+    "brightYellow": "#c2a25d",
+    "brightBlue": "#6f879b",
+    "brightMagenta": "#9c7789",
+    "brightCyan": "#699189",
+    "brightWhite": "#c7b89f"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "evidence-slate": {
+    "display:name": "Clinical Low-Scatter Slate (Anti-Glare)",
+    "display:order": 1,
+    "background": "#1c1d22",
+    "foreground": "#9ba2b5",
+    "cmdtext": "#9ba2b5",
+    "cursor": "#7c8296",
+    "selectionBackground": "#2e313d",
+    "gray": "#5b6070",
+    "black": "#16171b",
+    "red": "#b5696c",
+    "green": "#789766",
+    "yellow": "#af945d",
+    "blue": "#667ea4",
+    "magenta": "#96779c",
+    "cyan": "#608983",
+    "white": "#8d93a6",
+    "brightBlack": "#3d404d",
+    "brightRed": "#bf7174",
+    "brightGreen": "#84a371",
+    "brightYellow": "#bda066",
+    "brightBlue": "#728cb8",
+    "brightMagenta": "#a382a9",
+    "brightCyan": "#6b9992",
+    "brightWhite": "#a8aebf"
+  }
+}
